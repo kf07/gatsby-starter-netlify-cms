@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
+import styled from 'styled-components';
 
 export default class IndexPage extends React.Component {
   render() {
@@ -17,9 +18,8 @@ export default class IndexPage extends React.Component {
             </div>
             {posts
               .map(({ node: post }) => (
-                <div
+                <Article
                   className="content"
-                  style={{ border: '1px solid #eaecee', padding: '2em 4em' }}
                   key={post.id}
                 >
                   <p>
@@ -34,10 +34,10 @@ export default class IndexPage extends React.Component {
                     <br />
                     <br />
                     <Link className="button is-small" to={post.fields.slug}>
-                      Keep Reading →
+                      続きを読む
                     </Link>
                   </p>
-                </div>
+                </Article>
               ))}
           </div>
         </section>
@@ -53,6 +53,11 @@ IndexPage.propTypes = {
     }),
   }),
 }
+
+const Article = styled.article`
+  border: 1px solid #eaecee;
+  padding: 1em 1em;
+`
 
 export const pageQuery = graphql`
   query IndexQuery {
