@@ -34,6 +34,7 @@ export const BlogPostTemplate = ({
                   {tags.map(tag => (
                     <li key={tag + `tag`}>
                       <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
+                        <img src="" />
                     </li>
                   ))}
                 </ul>
@@ -63,7 +64,16 @@ const BlogPost = ({ data }) => {
         content={post.html}
         contentComponent={HTMLContent}
         description={post.frontmatter.description}
-        helmet={<Helmet title={`${post.frontmatter.title} | Blog`} />}
+        helmet={<Helmet
+            title={`${post.frontmatter.title} | 備忘録`}
+            meta={[
+                { name: 'description', content: post.frontmatter.description },
+                { property: 'og:title', content: post.frontmatter.title },
+                { property: 'og:description', content: post.frontmatter.description },
+                { property: 'og:image', content: `${origin}${post.frontmatter.image}` },
+            ]}
+        />
+        }
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
       />
@@ -93,19 +103,3 @@ export const pageQuery = graphql`
     }
   }
 `
-
-const Meta = ({ post }) => {
-    const origin = 'https://shibe97.com';
-
-    return (
-        <Helmet
-            title={`${post.frontmatter.title} | Blog`}
-            meta={[
-                { name: 'description', content: post.frontmatter.description },
-                { property: 'og:title', content: post.frontmatter.title },
-                { property: 'og:description', content: post.frontmatter.description },
-                { property: 'og:image', content: `${origin}${post.frontmatter.image}` },
-            ]}
-        />
-    );
-};
