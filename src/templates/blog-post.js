@@ -70,7 +70,7 @@ const BlogPost = ({ data }) => {
                 { name: 'description', content: post.frontmatter.description },
                 { property: 'og:title', content: post.frontmatter.title },
                 { property: 'og:description', content: post.frontmatter.description },
-                { property: 'og:image', content: `https://kanlog.netlify.com/${post.frontmatter.image}` },
+                { property: 'og:image', content: post.frontmatter.image },
             ]}
         />
         }
