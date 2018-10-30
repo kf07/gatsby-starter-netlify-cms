@@ -16,19 +16,19 @@ export default class IndexPage extends React.Component {
             <div className="content">
               <h1 className="has-text-weight-bold is-size-2">Latest Stories</h1>
             </div>
+            <ArticleList>
             {posts
               .map(({ node: post }) => (
-                <Article
+                <ArticleItem><Article
                   className="content"
                   key={post.id}
                 >
                   <p>
-                    <Link className="has-text-primary" to={post.fields.slug}>
-                      {post.frontmatter.title}
-                    </Link>
-                      <div>{post.frontmatter.images}</div>
-                    <span> &bull; </span>
-                    <small>{post.frontmatter.date}</small>
+                      <BlogImage><img src={post.frontmatter.image} /></BlogImage>
+                      <Link className="has-text-primary" to={post.fields.slug}>
+                          {post.frontmatter.title}
+                      </Link>
+                      <small>{post.frontmatter.date}</small>
                   </p>
                   <p>
                     {post.excerpt}
@@ -39,7 +39,9 @@ export default class IndexPage extends React.Component {
                     </Link>
                   </p>
                 </Article>
+                </ArticleItem>
               ))}
+            </ArticleList>
           </div>
         </section>
       </Layout>
@@ -55,9 +57,24 @@ IndexPage.propTypes = {
   }),
 }
 
-const Article = styled.article`
+const BlogImage = styled.div`
+`
+
+const ArticleList = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;;
+`
+
+const ArticleItem = styled.li`
+  width: 32.3%;
+  margin: 0 0 20px;
   border: 1px solid #eaecee;
+`
+
+const Article = styled.article`
   padding: 1em 1em;
+ 
 `
 
 export const pageQuery = graphql`
@@ -77,6 +94,7 @@ export const pageQuery = graphql`
             title
             templateKey
             date(formatString: "MMMM DD, YYYY")
+            image
           }
         }
       }
