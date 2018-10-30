@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import styled from 'styled-components';
+import media from 'styled-media-query';
 
 export default class IndexPage extends React.Component {
   render() {
@@ -70,7 +71,10 @@ const ArticleItem = styled.li`
   width: 32.3%;
   margin: 0 0 20px;
   border: 1px solid #eaecee;
-`
+${media.lessThan("medium")`
+    width: 100%;
+  `}
+`;
 
 const Article = styled.article`
   padding: 1em 1em;
