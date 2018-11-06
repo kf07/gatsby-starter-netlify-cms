@@ -23,10 +23,12 @@ export default class IndexPage extends React.Component {
                   <Link className="ArticleLink" to={post.fields.slug}>
                     <Article className="content" key={post.id}>
                         <BlogImage><img src={post.frontmatter.image} /></BlogImage>
+                        <BlogText>
                         <p className="has-text-primary blog-title">
                             {post.frontmatter.title}
                         </p>
                       <ArticleDate>{post.frontmatter.date}</ArticleDate>
+                        </BlogText>
                     </Article>
                   </Link>
                 </ArticleItem>
@@ -54,6 +56,10 @@ const ArticleList = styled.ul`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;;
+`;
+
+const BlogText = styled.div`
+  min-height: 85px;
 `
 
 const ArticleDate = styled.small`
@@ -69,7 +75,6 @@ const ArticleItem = styled.li`
   margin: 0 0 20px;
   border: 1px solid #eaecee;
   position: relative;
-  min-height: 310px;
 ${media.lessThan("medium")`
     width: 100%;
   `}
