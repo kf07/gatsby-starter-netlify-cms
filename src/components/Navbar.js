@@ -36,7 +36,6 @@ const HeaderNav = styled.div`
 `
 
 const HeaderInner = styled.div`
-    max-width: 960px;
     display: flex;
     justify-content: space-between;
     margin: auto;
