@@ -48,6 +48,8 @@
     "@types/material-ui": "^0.21.5",
     "gatsby-plugin-google-analytics": "^2.0.7",
     "material-ui": "^0.20.2",
+    "normalize-scss": "^7.0.1",
+    "normalize.css": "^8.0.1",
     "prettier": "^1.7.4",
     "rimraf": "^2.6.2",
     "styled-media-query": "^2.0.2"

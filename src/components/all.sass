@@ -1,5 +1,5 @@
-@import "~bulma/sass/utilities/initial-variables"
 @import url(https://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+@import "~normalize.css"
 
 // Config vars
 $kaldi-red: #FD461E
@@ -7,6 +7,29 @@ $kaldi-red-invert: #fff
 
 $primary: $kaldi-red
 $primary-invert: $kaldi-red-invert
+
+ul
+  list-style: none
+  padding: 0
+
+a
+  text-decoration: none
+
+.container
+  max-width: 1150px
+  margin: auto
+  padding: 0 15px
+
+pre
+  background-color: #364548
+  color: #fff
+  font-size: .875em
+  -webkit-overflow-scrolling: touch
+  overflow-x: auto
+  padding: 1.25em 1.5em
+  white-space: pre
+  word-wrap: normal
+
 
 .content .taglist
   list-style: none
@@ -40,10 +63,13 @@ $primary-invert: $kaldi-red-invert
 .margin-top-0
   margin-top: 0 !important
 
-@import "~bulma"
+img
+  max-width: 100%
 
 body
   font-family: 'Noto Sans Japanese', sans-serif
+  line-height: 1.5
+  color: #333
 
 .navbar-brand
   align-items: center

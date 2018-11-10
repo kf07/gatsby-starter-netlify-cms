@@ -5,6 +5,8 @@ import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
+import styled from 'styled-components'
+import media from 'styled-media-query';
 
 export const BlogPostTemplate = ({
   content,
@@ -23,9 +25,9 @@ export const BlogPostTemplate = ({
       <div className="container content">
         <div className="columns">
           <div className="column is-10 is-offset-1">
-            <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
+            <BlogTitle className="title is-size-2 has-text-weight-bold is-bold-light">
               {title}
-            </h1>
+            </BlogTitle>
             <p>{date}</p>
             <PostContent content={content} />
             {tags && tags.length ? (
@@ -55,6 +57,14 @@ BlogPostTemplate.propTypes = {
   title: PropTypes.string,
   helmet: PropTypes.instanceOf(Helmet),
 }
+
+const BlogTitle = styled.h1`
+  font-size: 2.5rem
+  ${media.lessThan("medium")`
+    font-size: 1.8rem
+  `}
+`;
+
 
 const BlogPost = ({ data }) => {
   const { markdownRemark: post } = data
