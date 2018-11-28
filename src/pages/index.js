@@ -55,7 +55,7 @@ const BlogImage = styled.div`
 const ArticleList = styled.ul`
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;;
+  justify-content: flex-start;
 `;
 
 const BlogText = styled.div`
@@ -75,8 +75,15 @@ const ArticleItem = styled.li`
   margin: 0 0 20px;
   border: 1px solid #eaecee;
   position: relative;
+  &:not(:nth-child(3n)){
+    margin: 0 1.55% 0 0;
+    ${media.lessThan("medium")`
+      margin: 0 0 15px;
+    `}
+  }
 ${media.lessThan("medium")`
     width: 100%;
+    margin: 0 0 15px;
   `}
 `;
 
