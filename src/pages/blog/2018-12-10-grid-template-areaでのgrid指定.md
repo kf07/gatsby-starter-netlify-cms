@@ -81,7 +81,6 @@ gapを使う場合はgrid-template-area、または後述するショートハ�
 ## grid-template
 grid-templateでは、  
 「grid-template-areas,gird-template-columns,gird-template-rows」をまとめて指定することができ、より視覚的に記述することができます  \
-また、視覚的に並べることを目的としているためrepeat関数を使うことはできません
 ```scss:
   //それぞれ別で指定
 .grid {
