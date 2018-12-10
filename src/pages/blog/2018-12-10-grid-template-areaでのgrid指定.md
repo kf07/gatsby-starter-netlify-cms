@@ -1,11 +1,11 @@
 ---
 templateKey: blog-post
-title: grid-template-areaでのgrid指定
+title: grid-template-areaでのCSS Grid
 date: 2018-12-10T08:51:34.840Z
 description: css grid grid-template-areaでのgrid指定を書いていきます
 tags:
   - CSS3
-  - grid
+  - Grid
 image: /img/css3.jpg
 ---
 ## grid-template-areas
@@ -73,11 +73,9 @@ grid-area: 配置したいgrid-template-areaの名前\
 ```
 
 ![grid-areaでの配置](/img/grid-area02.png)
+
 ※gapのautoprefixerでのIE対応はgrid-template-areaでの配置じゃないと効かないので\
 gapを使う場合はgrid-template-area、または後述するショートハンドのgrid-templateでの指定が必須になります
-
-
-
 
 
 ## grid-template
