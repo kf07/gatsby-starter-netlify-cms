@@ -76,7 +76,7 @@ const ArticleItem = styled.li`
   border: 1px solid #eaecee;
   position: relative;
   &:not(:nth-child(3n)){
-    margin: 0 1.55% 0 0;
+    margin: 0 1.55% 20px 0;
     ${media.lessThan("medium")`
       margin: 0 0 15px;
     `}

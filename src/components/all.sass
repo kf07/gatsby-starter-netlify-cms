@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP')
-@import '/node_modules/modern-normalize/modern-normalize.css';
+@import "~normalize.css"
 
 // Config vars
 $kaldi-red: #FD461E
@@ -7,6 +7,11 @@ $kaldi-red-invert: #fff
 
 $primary: $kaldi-red
 $primary-invert: $kaldi-red-invert
+
+*,
+*::before,
+*::after
+  box-sizing: border-box
 
 ul
   list-style: none
