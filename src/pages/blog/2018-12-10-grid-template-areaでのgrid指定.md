@@ -10,18 +10,18 @@ image: /img/css3.jpg
 ---
 ## grid-template-areas
 
-前回の記事ではグリッドアイテムの配置を何番目から何番目まで〜という指定をしてきましたが、もっとわかりやすく指定することができます\
-それがgrid-template-areasです\
-grid-template-areasではそれぞれの**グリッドに名前**をつけて視覚的に指定することができます　　
+前回の記事ではグリッドアイテムの配置を何番目から何番目まで〜という指定をしてきましたが、もっとわかりやすく指定することができます  
+それがgrid-template-areasです  
+grid-template-areasではそれぞれの**グリッドに名前**をつけて視覚的に指定することができます  
 gird-template-columnsとgrid-template-rowsは今までと同じように指定します\
 grid-template-areaの指定が他のCSSにはない書き方なので見慣れないかもしれないですが、慣れればわかりやすいと思います  
 
-以下の指定の場合は\
-上から1番目、左から1番目〜2番目のグリッドをitem1\
-上から1番目、左から3番目のグリッドをitem2\
-上から2番目、左から１番目のグリッドをitem3\
-上から2番目、左から2番目、3番目のグリッドをitem4\
-とそれぞれのグリッドに名前をつけています\
+以下の指定の場合は  
+上から1番目、左から1番目〜2番目のグリッドをitem1  
+上から1番目、左から3番目のグリッドをitem2  
+上から2番目、左から１番目のグリッドをitem3  
+上から2番目、左から2番目、3番目のグリッドをitem4  
+とそれぞれのグリッドに名前をつけています  
 CSSの記述と実際のgridのセルが同じになっていて視覚的にわかりやすくなっていると思います。
 
 ```scss:
@@ -37,8 +37,8 @@ CSSの記述と実際のgridのセルが同じになっていて視覚的にわ�
 
 ![grid-area](/img/grid-area01.png)
 
-そして名前をつけたグリッドにグリッドアイテムを配置していきます\
-grid-area: 配置したいgrid-template-areaの名前\
+そして名前をつけたグリッドにグリッドアイテムを配置していきます  
+grid-area: 配置したいgrid-template-areaの名前  
 で指定します
 
 ```html
@@ -74,13 +74,13 @@ grid-area: 配置したいgrid-template-areaの名前\
 
 ![grid-areaでの配置](/img/grid-area02.png)
 
-※gapのautoprefixerでのIE対応はgrid-template-areaでの配置じゃないと効かないので\
+※gapのautoprefixerでのIE対応はgrid-template-areaでの配置じゃないと効かないので  
 gapを使う場合はgrid-template-area、または後述するショートハンドのgrid-templateでの指定が必須になります
 
 
 ## grid-template
 grid-templateでは、  
-「grid-template-areas,gird-template-columns,gird-template-rows」をまとめて指定することができ、より視覚的に記述することができます  \
+「grid-template-areas,gird-template-columns,gird-template-rows」をまとめて指定することができ、より視覚的に記述することができます  
 ```scss:
   //それぞれ別で指定
 .grid {
