@@ -48,10 +48,12 @@
     "@material-ui/core": "^3.2.2",
     "@types/material-ui": "^0.21.5",
     "gatsby-plugin-google-analytics": "^2.0.7",
+    "gatsby-remark-prismjs": "^3.1.4",
     "material-ui": "^0.20.2",
     "normalize-scss": "^7.0.1",
     "normalize.css": "^8.0.1",
     "prettier": "^1.7.4",
+    "prismjs": "^1.15.0",
     "rimraf": "^2.6.2",
     "styled-media-query": "^2.0.2"
   }
