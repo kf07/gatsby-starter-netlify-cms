@@ -59,7 +59,7 @@ const ArticleList = styled.ul`
 `;
 
 const BlogText = styled.div`
-  min-height: 82px;
+  min-height: 83px;
 `
 
 const ArticleDate = styled.small`
