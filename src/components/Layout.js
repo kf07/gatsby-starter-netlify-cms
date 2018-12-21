@@ -1,9 +1,9 @@
-import React from 'react'
-import Helmet from 'react-helmet'
+import React from 'react';
+import Helmet from 'react-helmet';
 import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
+import './all.sass';
+import Navbar from '../components/Navbar';
 
-import Navbar from '../components/Navbar'
-import './all.sass'
 
 const TemplateWrapper = ({ children }) => (
   <div>
