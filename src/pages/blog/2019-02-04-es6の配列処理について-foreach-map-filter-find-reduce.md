@@ -150,3 +150,34 @@ console.log(yasai)
 ## some,every
 someは配列の要素の1つ以上が条件を満たすとき「true」、1つも満たすものがなかったとき「false」を返す  
 everyは配列の要素の全てが条件を満たすとき「true」、それ以外「false」を返す
+
+
+some
+```javascript
+const numbers = [0,1,2,3,20];
+
+const someNum = numbers.some(function(number){
+  return number <= 10;
+});
+console.log(someNum);
+```
+
+結果  
+10以下ではない数値(20)があるが1つ以上が10以下のためtrue
+```
+true
+```
+
+every
+```javascript
+const numbers = [0,1,2,3,20];
+const everyNum = numbers.every(function(number){
+  return number <= 10;
+});
+console.log(everyNum);
+```
+
+結果  10以下ではない数値(20)があるためfalse
+```
+false
+```
