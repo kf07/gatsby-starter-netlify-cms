@@ -83,3 +83,10 @@ SCSS
   margin: 0 0 10px;
 }
 ```
+
+以下のCSSによりレスポンシブなレイアウトをつくっています
+```scss
+grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+```
+minmaxは(最小値,最大値)で指定します  
+auto-fillはrepeatで繰り返す数を指定する代わりに使用することができます
