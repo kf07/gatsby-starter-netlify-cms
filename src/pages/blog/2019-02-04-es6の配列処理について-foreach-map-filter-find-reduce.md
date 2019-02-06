@@ -1,6 +1,6 @@
 ---
 templateKey: blog-post
-title: ES6の配列処理について (forEach map filter find reduce some every)
+title: ES6の配列処理について (forEach map filter find some every)
 date: 2019-02-04T07:33:17.462Z
 description: 'ES6の配列処理について forEach,map,filter,find,reduce,some,everyの説明をしていきます'
 tags:
