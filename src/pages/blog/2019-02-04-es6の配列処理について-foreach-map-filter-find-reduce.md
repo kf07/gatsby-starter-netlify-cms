@@ -1,6 +1,6 @@
 ---
 templateKey: blog-post
-title: ES6の配列処理について (forEach map filter find some every)
+title: ES6の配列処理について (forEach map filter find some every reduce)
 date: 2019-02-04T07:33:17.462Z
 description: 'ES6の配列処理について forEach,map,filter,find,reduce,some,everyの説明をしていきます'
 tags:
@@ -65,7 +65,7 @@ const products = [
     type: '甲殻類'
   }
 ];
-//products配列のname属性のみで配列を作成
+//products配列のnameのみで配列を作成
 const names =  products.map(function(product){
   return product.name;
 });
@@ -181,3 +181,56 @@ console.log(everyNum);
 ```
 false
 ```
+
+## reduce
+配列の各要素に対して（左から右へ）関数を適用し、単一の値にする
+
+reduceでよくある配列の要素を全て足す使い方  
+numbersの配列の数字を全て足してみます   
+sumの値は前回の結果が入る    
+sumは初期値0で指定  
+
+- 1回目は0（初期値）+ 10  
+- 2回目は10（1回目の結果） + 20  
+- 3回目は30（2回目の結果）+ 30  
+で結果60になる  
+初期値は0である必要はないので10で指定したら結果は70になり、20で指定したら結果は80になります
+```javascript
+const numbers = [10,20,30];
+numbers.reduce(function(sum,number){
+  return sum + number
+},0);
+```
+
+結果
+```
+60
+```
+
+primaryColorsのcolorのみで配列を作る  
+mapでできますがreduceでやってみます  
+初期値を空の配列で指定  
+- 空の配列にredをpush
+- [red]にblueをpush
+- [red,blue]にgreenをpush  
+結果[red,blue,green]になります
+```javascript
+const primaryColors = [
+  {
+    color: 'red'
+  },
+  {
+    color: 'blue'
+  },
+  {
+    color: 'green'
+  }
+];
+
+primaryColors.reduce(function(previous,primaryColor){
+  previous.push(primaryColor.color);
+  console.log(previous)
+  return previous;
+},[]);
+```
+
